@@ -108,6 +108,7 @@ const MainContent = styled(Box)(({ theme, visible }) => ({
 }));
 
 const MainTitle = styled(Typography)(({ theme, visible }) => ({
+  marginLeft: '2rem',
   fontSize: '5rem',
   fontWeight: 'bold',
   color: 'white',
@@ -123,7 +124,7 @@ const MainTitle = styled(Typography)(({ theme, visible }) => ({
 
 const SubTitle = styled(Typography)(({ theme, visible }) => ({
   fontSize: '1rem',
-  marginLeft: '0.5rem',
+  marginLeft: '2rem',
   color: 'white',
   [theme.breakpoints.down('md')]: {
     fontSize: '1rem',
@@ -194,7 +195,7 @@ const Header = () => {
             style={{ fontWeight: 'bold', color: '#000', fontFamily: 'system-ui'}}
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '26rem',
+                marginLeft: '30rem',
                 marginTop: '6rem' 
                 // Add margin-left for large screens
               },
@@ -209,7 +210,7 @@ const Header = () => {
             paragraph
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '26rem',
+                marginLeft: '30rem',
                // Add margin-left for large screens
               },
             }}
@@ -226,7 +227,7 @@ const Header = () => {
                 marginLeft: '26rem', // Add margin-left for large screens
               },
             }}
-            style={{ color: '#000', marginRight: '20rem', fontFamily: 'monospace', fontSize: '20px' }}
+            style={{ color: '#000',  marginLeft: '30rem', marginRight: '20rem', fontFamily: 'monospace', fontSize: '20px' }}
           >
             We are a dynamic team of dedicated professionals specializing in website development and digital marketing services. Our mission is to help business of all sizes establish a strong online presence and achieve their digital goals.
             We will Transform your business Ideas into Stunning websites and promote your business website in order to bring in more visitors.
@@ -237,21 +238,21 @@ const Header = () => {
             paragraph
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '30rem', // Add margin-left for large screens
               },
             }}
             style={{ color: '#fff' }}
           >
             At Fail2Success, we believe that every challenge is an opportunity to grow and succedd. Our name embodies our philosophy : through preseverance and innovation, we turn setbacks into stepping stones towards success.
           </Typography>
-          <FontAwesomeIcon icon={faQuoteLeft} style={{marginLeft: '26rem'}} />
+          <FontAwesomeIcon icon={faQuoteLeft} style={{marginLeft: '30rem'}} />
           <Typography
             variant="body1"
             color="textSecondary"
             paragraph
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '30rem', // Add margin-left for large screens
               },
             }}
             style={{ color: '#fff' }}
@@ -265,7 +266,7 @@ const Header = () => {
             style={{ cursor: 'pointer' }}
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '30rem', // Add margin-left for large screens
               },
             }}
           >
@@ -274,7 +275,7 @@ const Header = () => {
 
     <Root theme={theme}>
       <Container>
-        <Title variant="h3" theme={theme}>
+        <Title variant="h3" theme={theme} sx={{marginLeft: '3rem'}}>
           Why Choose Us
           
         </Title>
@@ -296,13 +297,13 @@ const Header = () => {
     <Reviews />
     <HeaderContainer>
       <Container>
-      <Typography variant="h4" component="h2" sx={{fontWeight: 900, color: '#fff', paddingTop: '2rem', marginTop: '4rem'}} gutterBottom>
+      <Typography variant="h4" component="h2" sx={{fontWeight: 900, color: '#fff', paddingTop: '2rem', marginTop: '4rem', marginLeft: '3rem'}} gutterBottom>
         Leadership
       </Typography>
       <Grid container spacing={4}>
         {teamMembers.map((member, index) => (
           <Grid item xs={12} sm={6} md={6} key={index}>
-            <Card sx={{ display: 'flex', alignItems: 'center', height: '100%', backgroundColor: '#2d3035', color: '#fff' }}>
+            <Card sx={{ display: 'flex', alignItems: 'center', height: '100%', backgroundColor: '#2d3035', color: '#fff',marginLeft: '3rem' }}>
               <CardMedia
                 component="img"
                 sx={{ width: 150, height: 150 }}
@@ -336,7 +337,7 @@ const Header = () => {
       </Container>
     </HeaderContainer>
     <Container sx={{paddingTop: '2rem'}}>
-      <Typography variant="h4" component="h2" sx={{fontWeight: 900}} gutterBottom>
+      <Typography variant="h4" component="h2" sx={{fontWeight: 900, marginLeft: '3rem'}} gutterBottom>
         FAQ's
       </Typography>
       {faqs.map((faq, index) => (
@@ -346,7 +347,7 @@ const Header = () => {
             aria-controls={`panel${index + 1}a-content`}
             id={`panel${index + 1}a-header`}
           >
-            <Typography>
+            <Typography sx={{marginLeft: '3rem'}}>
               {index + 1} - {faq.question}
             </Typography>
           </AccordionSummary>

@@ -74,6 +74,7 @@ const MainTitle = styled(Typography)(({ theme, visible }) => ({
   fontSize: '5rem',
   fontWeight: 'bold',
   color: 'white',
+  marginLeft: '3rem',
   [theme.breakpoints.down('md')]: {
     fontSize: '4rem',
   },
@@ -88,6 +89,7 @@ const SubTitle = styled(Typography)(({ theme, visible }) => ({
   fontSize: '1rem',
   marginLeft: '0.5rem',
   color: 'white',
+  marginLeft: '3.5rem',
   [theme.breakpoints.down('md')]: {
     fontSize: '1rem',
   },
@@ -101,6 +103,7 @@ const SubTitle = styled(Typography)(({ theme, visible }) => ({
 const CustomTabs = styled(Tabs)(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
+  marginLeft: '3rem',
   [theme.breakpoints.down('sm')]: {
     '& .MuiTabs-flexContainer': {
       flexDirection: 'row',
@@ -165,7 +168,7 @@ const Work = () => {
               variant="h3"
               component="h2"
               gutterBottom
-              style={{ fontWeight: 'bold', color: '#000', fontFamily: 'system-ui', textAlign: 'left' }}
+              style={{ fontWeight: 'bold', color: '#000', fontFamily: 'system-ui', textAlign: 'left' ,marginLeft: '3rem'}}
             >
               OUR PROJECTS
             </Typography>
@@ -173,7 +176,7 @@ const Work = () => {
               variant="body1"
               color="textSecondary"
               paragraph
-              style={{ color: '#000', fontFamily: 'monospace', fontSize: '20px', textAlign: 'left', margin: '0', maxWidth: '800px' }}
+              style={{ color: '#000', fontFamily: 'monospace', fontSize: '20px', textAlign: 'left', margin: '0', maxWidth: '800px',marginLeft: '3rem' }}
             >
               We are a dynamic team of dedicated professionals specializing in website development and digital marketing services. Our mission is to help businesses of all sizes establish a strong online presence and achieve their digital goals. We will transform your business ideas into stunning websites and promote your business website to bring in more visitors.
             </Typography>
@@ -190,8 +193,8 @@ const Work = () => {
           <Grid container spacing={3} style={{ marginTop: 20, marginLeft: 10 }}>
             {filteredProjects.map((project) => (
               <Grid item xs={12} sm={6} md={4} key={project.id}>
-                <Card>
-                  <CardMedia component="img" height="200" image={project.image} alt={project.title} />
+                <Card sx={{marginLeft: '3rem'}}>
+                  <CardMedia component="img" height="200" image={project.image} alt={project.title}/>
                   <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p">
                       {project.title}
