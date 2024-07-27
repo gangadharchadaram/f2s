@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import logoImg from '../assets/logo.png';
-import Hidden from '@mui/material/Hidden';
+import { AppBar, Toolbar,Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import logo from "../assets/logo.png";
 import { styled, keyframes } from '@mui/system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom'; 
 
 const fadeIn = keyframes`
   from {
@@ -16,136 +16,101 @@ const fadeIn = keyframes`
   }
 `;
 
-const CustomAppBar = styled(AppBar)(({ theme }) => ({
+const Nav = styled(AppBar)({
   backgroundColor: 'transparent',
   boxShadow: 'none',
-  animation: `${fadeIn} 1s ease-in`,
-  marginTop: 0,
-  paddingTop: 0,
-  position: 'fixed',
-  width: '100%',
-  top: 0,
-  zIndex: 1300,
-  [theme.breakpoints.up('lg')]: {
-    height: '80px',
-  },
-  [theme.breakpoints.down('lg')]: {
-    height: '70px',
-  },
-  [theme.breakpoints.down('md')]: {
-    height: '60px',
-  },
-  [theme.breakpoints.down('sm')]: {
-    height: '50px',
-  },
-}));
-
-const Title = styled('div')({
-  position: 'relative',
-  color: '#000',
-  flexGrow: 1,
-  display: 'flex',
-  alignItems: 'center',
 });
 
-const Logo = styled('img')(({ theme }) => ({
-  
-  animation: `${fadeIn} 1s ease-in`,
-  [theme.breakpoints.up('xl')]: {
-    height: '290px',
-    marginLeft: '310px',
-  },
-  [theme.breakpoints.down('lg')]: {
-    height: '160px',
-    marginLeft: '350px',
-  },
+const Logo = styled('img')({
+  height: '100px', // Adjust height as needed
+  objectFit: 'contain',
+  marginRight: 'auto', // Pushes the logo to the left
+});
+
+const NavLinksContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  marginLeft: theme.spacing(4), // Adds space between logo and nav links
   [theme.breakpoints.down('md')]: {
-    height: '100px',
-    marginLeft: '0',
-  },
-  [theme.breakpoints.down('sm')]: {
-    height: '80px',
+    display: 'none', // Hide nav links on small screens
   },
 }));
 
 const NavLink = styled(Button)(({ theme }) => ({
-  color: 'black',
-  right: '12%',
-  textTransform: 'none',
-  fontSize: '1rem',
-  animation: `${fadeIn} 1s ease-in`,
-  [theme.breakpoints.up('xl')]: {
-    fontSize: '1.2rem',
-  },
-  [theme.breakpoints.down('lg')]: {
-    fontSize: '1rem',
-  },
-  [theme.breakpoints.down('md')]: {
-    fontSize: '0.9rem',
-  },
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.8rem',
+  marginLeft: theme.spacing(2),
+  color: 'white',
+  textDecoration: 'none',
+  '&:hover': {
+    textDecoration: 'underline',
   },
 }));
 
 const Navbar = () => {
+ 
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const toggleDrawer = (open) => () => {
+  
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
     setDrawerOpen(open);
   };
 
-  const drawerList = () => (
-    <List>
-      {['Home', 'About', 'Services', 'Work', 'Contact'].map((text) => (
-        <ListItem button key={text}>
-          <ListItemText primary={text} />
-        </ListItem>
-      ))}
-      <ListItem>
-        <FontAwesomeIcon icon={faFacebookF} />
-      </ListItem>
-      <ListItem>
-        <FontAwesomeIcon icon={faTwitter} />
-      </ListItem>
-      <ListItem>
-        <FontAwesomeIcon icon={faLinkedinIn} />
-      </ListItem>
-    </List>
-  );
-
   return (
-    <CustomAppBar>
-      <Toolbar>
-        <Title>
-          <Logo src={logoImg} alt="Logo" />
-        </Title>
-        <Hidden mdDown>
-          <NavLink>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Services</NavLink>
-          <NavLink>Work</NavLink>
-          <NavLink>Contact</NavLink>
-          <NavLink>
-            <FontAwesomeIcon icon={faFacebookF} />
-          </NavLink>
-          <NavLink>
-            <FontAwesomeIcon icon={faTwitter} />
-          </NavLink>
-          <NavLink>
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </NavLink>
-        </Hidden>
-        <Hidden mdUp>
-          <IconButton edge="start" color="black" aria-label="menu" onClick={toggleDrawer(true)}>
-            <MenuIcon />
-          </IconButton>
-          <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-            {drawerList()}
-          </Drawer>
-        </Hidden>
-      </Toolbar>
-    </CustomAppBar>
+    <>
+    <Nav position="static" elevation={0}>
+    <Toolbar>
+      <Logo src={logo} alt="Logo" />
+      <NavLinksContainer>
+        <NavLink component={Link} to="/home" color="inherit">Home</NavLink>
+        <NavLink component={Link} to="/about" color="inherit">About</NavLink>
+        <NavLink component={Link} to="/services" color="inherit">Service</NavLink>
+        <NavLink component={Link} to="/projects" color="inherit">Work</NavLink>
+        <NavLink color="inherit">Contact</NavLink>
+        <NavLink>
+          <FontAwesomeIcon icon={faFacebookF} />
+        </NavLink>
+        <NavLink>
+          <FontAwesomeIcon icon={faInstagram} />
+        </NavLink>
+        <NavLink>
+          <FontAwesomeIcon icon={faLinkedinIn} />
+        </NavLink>
+        <NavLink color="inherit">🔍</NavLink>
+      </NavLinksContainer>
+      <IconButton
+        color="inherit"
+        aria-label="open drawer"
+        edge="end"
+
+        onClick={toggleDrawer(true)}
+        sx={{ display: { xs: 'flex', md: 'none' } }}
+      >
+        <MenuIcon />
+      </IconButton>
+    </Toolbar>
+  </Nav>
+  <Drawer
+    anchor="right"
+    open={drawerOpen}
+    onClose={toggleDrawer(false)}
+  >
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {['Home', 'About', 'Services', 'Work', 'Contact', 'F', 'X', 'in', '🔍'].map((text, index) => (
+          <ListItem button key={index}>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  </Drawer>
+  </>
   );
 };
 

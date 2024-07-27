@@ -38,7 +38,7 @@ const LogoImage = styled('img')({
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
-const LogoBar = () => {
+const Partners = () => {
   return (
     <LogoBarContainer height="300px">
       <Container>
@@ -58,4 +58,4 @@ const LogoBar = () => {
   );
 };
 
-export default LogoBar;
+export default Partners;

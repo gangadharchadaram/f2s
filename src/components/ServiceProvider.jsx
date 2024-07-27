@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Grid, Typography, Box, IconButton } from '@mui/material';
+import { Container, Grid, Typography, Box } from '@mui/material';
 import StrategyIcon from '@mui/icons-material/EmojiObjects'; // Replace with your icon
 import CreativeIcon from '@mui/icons-material/Brush'; // Replace with your icon
 import DevelopmentIcon from '@mui/icons-material/Computer'; // Replace with your icon
@@ -29,7 +29,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+const ServiceProvider = () => {
   const [selectedService, setSelectedService] = useState(0);
 
   const handleServiceClick = (index) => {
@@ -77,4 +77,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServiceProvider;

@@ -1,29 +1,21 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './components/LandingPage'
+import WhoWeAre from './components/Whoweare';
+import Work from './components/Work';
+import Service from './components/Service';
 
-import './App.css';
-import About from './components/About';
-import LandingPage from './components/LandingPage';
-import Projects from './components/Projects';
-import Services from './components/Services';
-import Testimonials from './components/Testnomials';
-import Reviews from './components/Reviews';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Partners from './components/Partners';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <LandingPage />
-      <Services />
-      <About />
-      <Projects />
-      <Testimonials />
-      <Reviews />
-      <Contact />
-      <Partners />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/home" element={<LandingPage />} />
+        <Route path="/about" element={<WhoWeAre />} />
+        <Route path="/services" element={<Service />} />
+        <Route path="/projects" element={<Work />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
