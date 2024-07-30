@@ -13,8 +13,10 @@ import {  Card, CardContent } from '@mui/material'
 import Reviews from './Reviews';
 import Contact from './Contact';
 import Footer from './Footer';
-import { faGreaterThan, faLessThan, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
-
+import { faGreaterThan, faLessThan, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import ceo from '../assets/sai.jpg';
+import director from '../assets/harsh.jpg';
+import marketter from '../assets/praveen.jpg';
 import { styled, useTheme } from '@mui/material/styles';
 import Partners from './Partners';
 import {  CardMedia, IconButton } from '@mui/material';
@@ -141,27 +143,24 @@ const SubTitle = styled(Typography)(({ theme, visible }) => ({
 const Header = () => {
   const teamMembers = [
     {
-      name: 'John Doe',
-      title: 'CEO & Founder',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: 'https://via.placeholder.com/150',
+      name: 'Gangadhar Chadaram',
+      title: 'Founder & BackEnd Developer',
+
+      image: `${ceo}`,
     },
     {
-      name: 'Janice Doe',
-      title: 'CEO & Founder',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: 'https://via.placeholder.com/150',
+      name: 'Harsh Pandey',
+      title: 'Director & FrontEnd Developer',
+      image: `${director}`,
     },
     {
-      name: 'Robert Doe',
-      title: 'CEO & Founder',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: 'https://via.placeholder.com/150',
+      name: 'Praveen',
+      title: 'Digital Marketer',
+      image: `${marketter}`,
     },
     {
       name: 'Monica Doe',
-      title: 'CEO & Founder',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'UX Designer',
       image: 'https://via.placeholder.com/150',
     },
   ];
@@ -188,94 +187,80 @@ const Header = () => {
       </Container>
     </HeaderContainer>
     <Grid item xs={12} md={6} order={{ xs: 1, md: 1 }}>
-          <Typography
-            variant="h3"
-            component="h2"
-            gutterBottom
-            style={{ fontWeight: 'bold', color: '#000', fontFamily: 'system-ui'}}
-            sx={{
-              '@media (min-width: 960px)': {
-                marginLeft: '30rem',
-                marginTop: '6rem' 
-                // Add margin-left for large screens
-              },
-              'sm': { marginTop: '2rem' },
-            }}
-          >
-            Who We Are
-          </Typography>
-          <Typography
-            variant="body1"
-            color="textSecondary"
-            paragraph
-            sx={{
-              '@media (min-width: 960px)': {
-                marginLeft: '30rem',
-               // Add margin-left for large screens
-              },
-            }}
-            style={{ color: '#000', fontFamily: 'Andalé Mono', fontSize: '25px'  }}
-          >
-           Welcome to F2S Software Solutions! Based in Vizag.
-          </Typography>
-          <Typography
-            variant="body1"
-            color="textSecondary"
-            paragraph
-            sx={{
-              '@media (min-width: 960px)': {
-                marginLeft: '26rem', // Add margin-left for large screens
-              },
-            }}
-            style={{ color: '#000',  marginLeft: '30rem', marginRight: '20rem', fontFamily: 'monospace', fontSize: '20px' }}
-          >
-            We are a dynamic team of dedicated professionals specializing in website development and digital marketing services. Our mission is to help business of all sizes establish a strong online presence and achieve their digital goals.
-            We will Transform your business Ideas into Stunning websites and promote your business website in order to bring in more visitors.
-          </Typography>
-          <Typography
-            variant="body1"
-            color="textSecondary"
-            paragraph
-            sx={{
-              '@media (min-width: 960px)': {
-                marginLeft: '30rem', // Add margin-left for large screens
-              },
-            }}
-            style={{ color: '#fff' }}
-          >
-            At Fail2Success, we believe that every challenge is an opportunity to grow and succedd. Our name embodies our philosophy : through preseverance and innovation, we turn setbacks into stepping stones towards success.
-          </Typography>
-          <FontAwesomeIcon icon={faQuoteLeft} style={{marginLeft: '30rem'}} />
-          <Typography
-            variant="body1"
-            color="textSecondary"
-            paragraph
-            sx={{
-              '@media (min-width: 960px)': {
-                marginLeft: '30rem', // Add margin-left for large screens
-              },
-            }}
-            style={{ color: '#fff' }}
-          >
-            our philosophy : through preseverance and innovation, we turn setbacks into stepping stones towards success.
-         
-          </Typography>
-          <Box
-            display="flex"
-            alignItems="center"
-            style={{ cursor: 'pointer' }}
-            sx={{
-              '@media (min-width: 960px)': {
-                marginLeft: '30rem', // Add margin-left for large screens
-              },
-            }}
-          >
-          </Box>
-        </Grid>
+  <Typography
+    variant="h3"
+    component="h2"
+    gutterBottom
+    sx={{
+      fontWeight: 'bold',
+      color: '#000',
+      fontFamily: 'system-ui',
+      marginLeft: { xs: '1rem', sm: '2rem', md: '20rem', lg: '18rem' },
+      marginTop: { xs: '1rem', sm: '2rem', md: '6rem' },
+    }}
+  >
+    Who We Are
+  </Typography>
+  <Typography
+    variant="body1"
+    color="textSecondary"
+    paragraph
+    sx={{
+      color: '#000',
+      fontFamily: 'Andalé Mono',
+      fontSize: '25px',
+      marginLeft: { xs: '1rem', sm: '2rem', md: '20rem', lg: '18rem' },
+    }}
+  >
+    Welcome to F2S Software Solutions! Based in Vizag.
+  </Typography>
+  <Typography
+    variant="body1"
+    color="textSecondary"
+    paragraph
+    sx={{
+      color: '#000',
+      fontFamily: 'monospace',
+      fontSize: '20px',
+      marginLeft: { xs: '1rem', sm: '2rem', md: '20rem', lg: '18rem' },
+      marginRight: { xs: '1rem', sm: '2rem', md: '10rem' },
+    }}
+  >
+    We are a dynamic team of dedicated professionals specializing in website development and digital marketing services. Our mission is to help businesses of all sizes establish a strong online presence and achieve their digital goals. We will transform your business ideas into stunning websites and promote your business website to bring in more visitors.
+  </Typography>
+  <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: { xs: '1rem', sm: '2rem', md: '22rem' }, marginBottom: '2rem' }}>
+    <FontAwesomeIcon icon={faQuoteLeft} />
+    <Typography
+      variant="body1"
+      color="textSecondary"
+      paragraph
+      sx={{
+        color: '#000',
+        fontSize: '20px',
+        fontFamily: 'cursive',
+        marginLeft: { xs: '0.5rem', sm: '1rem', md: '2rem' },
+        marginTop: '2rem',
+        marginRight: '1.5rem'
+      }}
+    >
+      Our philosophy: through perseverance and innovation, we turn setbacks into stepping stones towards success.
+    </Typography>
+    <FontAwesomeIcon icon={faQuoteRight} sx={{ marginLeft: { xs: '0.5rem', sm: '1rem', md: '2rem' } }} />
+  </Grid>
+  <Box
+    display="flex"
+    alignItems="center"
+    sx={{
+      cursor: 'pointer',
+      marginLeft: { xs: '1rem', sm: '2rem', md: '30rem' },
+    }}
+  >
+  </Box>
+</Grid>
 
     <Root theme={theme}>
       <Container>
-        <Title variant="h3" theme={theme} sx={{marginLeft: '3rem'}}>
+        <Title variant="h3" theme={theme} sx={{marginLeft: '2rem'}}>
           Why Choose Us
           
         </Title>
@@ -314,7 +299,7 @@ const Header = () => {
                 <Typography variant="h6" component="div">
                   {member.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.success">
                   {member.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ my: 1 }}>

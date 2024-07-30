@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Grid, Typography, Box, Button } from '@mui/material';
+import ContactFormDialog from './ContactFormDialog';
 
 const Contact = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
   return (
     <Box
       sx={{
@@ -16,7 +27,6 @@ const Contact = () => {
           justifyContent="center"
           sx={{
             marginTop: '4rem',
-          
             padding: '2rem',
           }}
         >
@@ -61,6 +71,7 @@ const Contact = () => {
                   padding: '0.5rem 3rem',
                   fontSize: '1rem',
                 }}
+                onClick={handleOpenDialog}
               >
                 Contact us
               </Button>
@@ -68,6 +79,7 @@ const Contact = () => {
           </Grid>
         </Grid>
       </Container>
+      <ContactFormDialog open={openDialog} onClose={handleCloseDialog} />
     </Box>
   );
 };

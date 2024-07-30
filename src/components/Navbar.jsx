@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Toolbar,Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import logo from "../assets/logo.png";
 import { styled, keyframes } from '@mui/system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const fadeIn = keyframes`
   from {
@@ -46,9 +46,8 @@ const NavLink = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
- 
   const [drawerOpen, setDrawerOpen] = useState(false);
-  
+
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -58,59 +57,75 @@ const Navbar = () => {
 
   return (
     <>
-    <Nav position="static" elevation={0}>
-    <Toolbar>
-      <Logo src={logo} alt="Logo" />
-      <NavLinksContainer>
-        <NavLink component={Link} to="/home" color="inherit">Home</NavLink>
-        <NavLink component={Link} to="/about" color="inherit">About</NavLink>
-        <NavLink component={Link} to="/services" color="inherit">Service</NavLink>
-        <NavLink component={Link} to="/projects" color="inherit">Work</NavLink>
-        <NavLink color="inherit">Contact</NavLink>
-        <NavLink>
-          <FontAwesomeIcon icon={faFacebookF} />
-        </NavLink>
-        <NavLink>
-          <FontAwesomeIcon icon={faInstagram} />
-        </NavLink>
-        <NavLink>
-          <FontAwesomeIcon icon={faLinkedinIn} />
-        </NavLink>
-        <NavLink color="inherit">🔍</NavLink>
-      </NavLinksContainer>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        edge="end"
-
-        onClick={toggleDrawer(true)}
-        sx={{ display: { xs: 'flex', md: 'none' } }}
+      <Nav position="static" elevation={0}>
+        <Toolbar>
+          <Logo src={logo} alt="Logo" />
+          <NavLinksContainer>
+            <NavLink component={Link} to="/" color="inherit">Home</NavLink>
+            <NavLink component={Link} to="/about" color="inherit">About</NavLink>
+            <NavLink component={Link} to="/services" color="inherit">Services</NavLink>
+            <NavLink component={Link} to="/projects" color="inherit">Work</NavLink>
+            <NavLink component={Link} to="/contact" color="inherit">Contact</NavLink>
+            <NavLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faFacebookF} />
+            </NavLink>
+            <NavLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} />
+            </NavLink>
+            <NavLink href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </NavLink>
+          </NavLinksContainer>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={toggleDrawer(true)}
+            sx={{ display: { xs: 'flex', md: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </Nav>
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
       >
-        <MenuIcon />
-      </IconButton>
-    </Toolbar>
-  </Nav>
-  <Drawer
-    anchor="right"
-    open={drawerOpen}
-    onClose={toggleDrawer(false)}
-  >
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {['Home', 'About', 'Services', 'Work', 'Contact', 'F', 'X', 'in', '🔍'].map((text, index) => (
-          <ListItem button key={index}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  </Drawer>
-  </>
+        <Box
+          sx={{ width: 250 }}
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <List>
+            {[
+              { text: 'Home', link: '/' },
+              { text: 'About', link: '/about' },
+              { text: 'Services', link: '/services' },
+              { text: 'Work', link: '/projects' },
+              { text: 'Contact', link: '/contact' }
+            ].map((item, index) => (
+              <ListItem button component={Link} to={item.link} key={index}>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+            <ListItem button component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faFacebookF} />
+              
+            </ListItem>
+            <ListItem button component="a" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faInstagram} />
+             
+            </ListItem>
+            <ListItem button component="a" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
+    </>
   );
 };
 

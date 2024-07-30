@@ -1,12 +1,10 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { styled, keyframes } from '@mui/system';
-import logo1 from '../assets/toyota-logo.png';
-import logo2 from '../assets/microsoft-logo.png';
-import logo3 from '../assets/samsung-logo.png';
-import logo4 from '../assets/google-logo.png';
-import logo5 from '../assets/walt-disney-logo.png';
-import logo6 from '../assets/nike-logo.png';
+import logo1 from '../assets/vizagserviceslogo.png';
+import logo2 from '../assets/youtubelogo.jpg';
+import logo3 from '../assets/vconstructions.png';
+
 
 const scroll = keyframes`
   0% {
@@ -36,7 +34,7 @@ const LogoImage = styled('img')({
   display: 'inline-block',
 });
 
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
+const logos = [logo1, logo2, logo3];
 
 const Partners = () => {
   return (
@@ -50,7 +48,7 @@ const Partners = () => {
           ))}
           {/* Duplicate the logos to create an infinite scroll effect */}
           {logos.map((logo, index) => (
-            <LogoImage key={index + logos.length} src={logo} alt={`Logo ${index + 1}`} style={{height:"300px"}}/>
+            <LogoImage key={index + logos.length} src={logo} alt={`Logo ${index + 1}`} style={{height:"250px"}}/>
           ))}
         </LogoScrollContainer>
       </Container>

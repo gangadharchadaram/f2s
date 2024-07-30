@@ -1,36 +1,35 @@
 import React, { useState } from 'react';
-import { Typography, Box, Container, Grid, Tabs, Tab, Card, CardContent, CardMedia } from '@mui/material';
+import { Typography, Box, Container, Grid, Tabs, Tab, Card, CardContent, CardMedia, Link } from '@mui/material';
 import Navbar from './Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@mui/material/styles';
 import Footer from './Footer';
 import Contact from './Contact';
+import vizagServices from '../assets/vizagservices 2.png';
+import vizagacserviceslogo from '../assets/vizagserviceslogo.png';
+import youtubeLogo from '../assets/youtubelogo.jpg'
 
 const projects = [
   {
     id: 1,
-    title: 'Take a Look into World of Interior Designer and Stylist Brady Tolbert',
-    image: 'https://via.placeholder.com/400',
+    title: 'Vizag AC Services',
+    image: `${vizagServices}`,
     category: 'websites',
-  },
-  {
-    id: 2,
-    title: 'Interview with Fashion and Lifestyle Blogger Marina the Moss',
-    image: 'https://via.placeholder.com/400',
-    category: 'media',
+    link: 'https://vizagservices.in/'
   },
   {
     id: 3,
-    title: 'Creative Logo Design for a New Brand',
-    image: 'https://via.placeholder.com/400',
+    title: 'Vizag AC Services',
+    image: `${vizagacserviceslogo}`,
     category: 'logos',
   },
+
   {
-    id: 4,
-    title: 'Rebranding a Well-Known Company',
-    image: 'https://via.placeholder.com/400',
-    category: 'brands',
+    id: 5,
+    title: 'Pramilas Kitchen',
+    image: `${youtubeLogo}`,
+    category: 'logos',
   },
 ];
 
@@ -176,9 +175,9 @@ const Work = () => {
               variant="body1"
               color="textSecondary"
               paragraph
-              style={{ color: '#000', fontFamily: 'monospace', fontSize: '20px', textAlign: 'left', margin: '0', maxWidth: '800px',marginLeft: '3rem' }}
+              style={{ color: '#000', fontFamily: 'monospace', fontSize: '20px', textAlign: 'left', margin: '0', maxWidth: '1200px',marginLeft: '3rem' }}
             >
-              We are a dynamic team of dedicated professionals specializing in website development and digital marketing services. Our mission is to help businesses of all sizes establish a strong online presence and achieve their digital goals. We will transform your business ideas into stunning websites and promote your business website to bring in more visitors.
+              Discover our portfolio of web development projects where we've crafted responsive, user-friendly websites tailored to our clients' unique needs. From sleek corporate sites to dynamic e-commerce platforms, our web development expertise ensures a robust online presence. <br /> <br /> Explore our custom software projects that demonstrate our ability to deliver tailored solutions for complex business challenges. From CRM systems to specialized applications, our software solutions are designed to optimize operations and drive growth.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={12} md={12}>
@@ -196,8 +195,13 @@ const Work = () => {
                 <Card sx={{marginLeft: '3rem'}}>
                   <CardMedia component="img" height="200" image={project.image} alt={project.title}/>
                   <CardContent>
+                    <Link href={project.link} color="inherit" target="_blank" rel="noopener">
+                      <Typography variant="h6" component="h3">
+                        {project.title}
+                      </Typography>
+                    </Link>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      {project.title}
+                      {project.desc}
                     </Typography>
                   </CardContent>
                 </Card>

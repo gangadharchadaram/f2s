@@ -24,7 +24,7 @@ const About = () => {
             style={{ fontWeight: 'bold', color: '#fff' }}
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem',
+                marginLeft: '10rem',
                 // Add margin-left for large screens
               },
               'sm': { marginTop: '2rem' },
@@ -38,7 +38,7 @@ const About = () => {
             paragraph
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '10rem', // Add margin-left for large screens
               },
             }}
             style={{ color: '#fff' }}
@@ -51,7 +51,7 @@ const About = () => {
             paragraph
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '10rem', // Add margin-left for large screens
               },
             }}
             style={{ color: '#fff' }}
@@ -64,7 +64,7 @@ const About = () => {
             paragraph
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '10rem', // Add margin-left for large screens
               },
             }}
             style={{ color: '#fff' }}
@@ -77,7 +77,7 @@ const About = () => {
             style={{ cursor: 'pointer' }}
             sx={{
               '@media (min-width: 960px)': {
-                marginLeft: '20rem', // Add margin-left for large screens
+                marginLeft: '10rem', // Add margin-left for large screens
               },
             }}
           >
