@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Toolbar, Box, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import logo from "../assets/logo.png";
+import logo from "../assets/logo2.png";
 import { styled, keyframes } from '@mui/system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -110,15 +110,15 @@ const Navbar = () => {
                 <ListItemText primary={item.text} />
               </ListItem>
             ))}
-            <ListItem button component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <ListItem button component="a" href="https://www.facebook.com/profile.php?id=61564763188607" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebookF} />
               
             </ListItem>
-            <ListItem button component="a" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <ListItem button component="a" href="https://www.instagram.com/f2ssoftaresolutions/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} />
              
             </ListItem>
-            <ListItem button component="a" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <ListItem button component="a" href="https://www.linkedin.com/in/fail2success-software-solutions-812b63323/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedinIn} />
             
             </ListItem>

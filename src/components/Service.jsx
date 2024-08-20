@@ -8,6 +8,7 @@ import ServiceProvider from './ServiceProvider';
 import { makeStyles } from '@mui/styles';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Card, CardContent,  Button } from '@mui/material';
+import PlanFormPopup from './PlanFormPopup';
 
 import Contact from './Contact';
 import Footer from './Footer';
@@ -232,6 +233,16 @@ const Service = () => {
   const classes = useStyles();
   const [currentSection, setCurrentSection] = useState(0);
 
+  const [openPopup, setOpenPopup] = useState(false);
+
+    const handleOpenPopup = () => {
+        setOpenPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setOpenPopup(false);
+    };
+
   
   return (
     <>
@@ -284,9 +295,10 @@ const Service = () => {
                 <Typography variant="subtitle2" color="white" gutterBottom>
                   Save {plan.save}
                 </Typography>
-                <Button variant="contained" color="primary" fullWidth>
+                <Button variant="contained" color="primary" onClick={handleOpenPopup} fullWidth>
                   Choose plan
                 </Button>
+                <PlanFormPopup open={openPopup} handleClose={handleClosePopup} />
                 <Box mt={2}>
                   <Typography variant="body1" color="white">
                     {plan.features.map((feature, index) => (

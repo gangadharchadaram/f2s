@@ -4,7 +4,7 @@ import { styled } from '@mui/system';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import logo from '../assets/logo.png'; // Make sure to have the logo image in your assets folder
+import logo from '../assets/logo2.png'; // Make sure to have the logo image in your assets folder
 
 const FooterContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#232527',
