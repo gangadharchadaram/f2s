@@ -185,8 +185,7 @@ const Work = () => {
               <CustomTab label="SHOW ALL" />
               <CustomTab label="WEBSITES" />
               <CustomTab label="LOGOS" />
-              <CustomTab label="BRANDS" />
-              <CustomTab label="MEDIAS" />
+          
             </CustomTabs>
           </Grid>
           <Grid container spacing={3} style={{ marginTop: 20, marginLeft: 10 }}>

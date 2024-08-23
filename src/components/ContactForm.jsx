@@ -185,7 +185,7 @@ const ContactForm = () => {
                   Phone: +91 8142541365
                 </Typography>
                 <Typography variant="body1" gutterBottom>
-                  Email: f2ssoftwaresolutions.com
+                  Email: contact@fail2successsoftwaresolutions.tech
                 </Typography>
                 
                 <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">

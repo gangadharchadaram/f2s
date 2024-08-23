@@ -3,6 +3,7 @@ import { Container, Typography, Box, useMediaQuery } from '@mui/material';
 import vizagservices from "../assets/vizagservices.png"
 import interior from "../assets/interior.avif"
 import portfolio from "../assets/portfolio.avif"
+import EZone from "../assets/Ezonehub.png"
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,6 +14,12 @@ const projects = [
     title: 'Vizag AC Services',
     year: '2024',
     description: 'Website Creation',
+  },
+  {
+    img: `${EZone}`, // Replace with actual image URL
+    title: 'EZOneHub',
+    year: '2024',
+    description: 'E-Commerce Application',
   },
   {
     img: `${interior}`, // Replace with actual image URL

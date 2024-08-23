@@ -3,7 +3,7 @@ import { Box, Container, Typography } from '@mui/material';
 import { styled, keyframes } from '@mui/system';
 import logo1 from '../assets/vizagserviceslogo.png';
 import logo2 from '../assets/youtubelogo.jpg';
-import logo3 from '../assets/vconstructions.png';
+import logo3 from '../assets/EZONE.png';
 
 
 const scroll = keyframes`

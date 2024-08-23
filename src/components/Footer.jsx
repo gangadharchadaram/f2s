@@ -48,13 +48,12 @@ const Footer = () => {
             Fail2Success Software Solutions
               </Typography>
               <Typography variant="body2" component="p" style={{ marginTop: '0.5rem' }}>
-                Vizag
+                Address: Rushikonda,
                 <br />
-                Visakhapatnam, AP
+                Visakhapatnam, AP - 530045
+              
                 <br />
-                Phone: 123-456-7890
-                <br />
-                Email: f2s@softwaresolutions.com
+                Email: contact@fail2successsoftwaresolutions.tech
               </Typography>
             </Box>
           </Grid>
