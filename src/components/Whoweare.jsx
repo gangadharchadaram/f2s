@@ -141,29 +141,7 @@ const SubTitle = styled(Typography)(({ theme, visible }) => ({
 
 
 const Header = () => {
-  const teamMembers = [
-    {
-      name: 'Gangadhar Chadaram',
-      title: 'Founder & BackEnd Developer',
-
-      image: `${ceo}`,
-    },
-    {
-      name: 'Harsh Pandey',
-      title: 'Director & FrontEnd Developer',
-      image: `${director}`,
-    },
-    {
-      name: 'Praveen',
-      title: 'Digital Marketer',
-      image: `${marketter}`,
-    },
-    {
-      name: 'Monica Doe',
-      title: 'UX Designer',
-      image: 'https://via.placeholder.com/150',
-    },
-  ];
+ 
   const faqs = [
     { question: 'Why Choose F2S?', answer: 'F2S is the best choice because we do multiple tasks like web development, logo design, SEO, PPC, SMM, respond quickly and deliver the product ontime' },
     { question: 'How do you build my website?', answer: 'We build your website by understanding your requirements. We ensure to configure the best and suitable domain name, hosting providers, customized design and content. Furthermore, we build your website tailoring your needs, with SEO and speed optimization. The below screenshot shows the process flow that we follow at ColorWhistle.' },
@@ -280,47 +258,7 @@ const Header = () => {
       </Container>
     </Root>
     <Reviews />
-    <HeaderContainer>
-      <Container>
-      <Typography variant="h4" component="h2" sx={{fontWeight: 900, color: '#fff', paddingTop: '2rem', marginTop: '4rem', marginLeft: '3rem'}} gutterBottom>
-        Leadership
-      </Typography>
-      <Grid container spacing={4}>
-        {teamMembers.map((member, index) => (
-          <Grid item xs={12} sm={6} md={6} key={index}>
-            <Card sx={{ display: 'flex', alignItems: 'center', height: '100%', backgroundColor: '#2d3035', color: '#fff',marginLeft: '3rem' }}>
-              <CardMedia
-                component="img"
-                sx={{ width: 150, height: 150 }}
-                image={member.image}
-                alt={member.name}
-              />
-              <CardContent>
-                <Typography variant="h6" component="div">
-                  {member.name}
-                </Typography>
-                <Typography variant="body2" color="text.success">
-                  {member.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ my: 1 }}>
-                  {member.description}
-                </Typography>
-                <IconButton aria-label="facebook">
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton aria-label="twitter">
-                  <TwitterIcon />
-                </IconButton>
-                <IconButton aria-label="linkedin">
-                  <LinkedInIcon />
-                </IconButton>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-      </Container>
-    </HeaderContainer>
+   
     <Container sx={{paddingTop: '2rem'}}>
       <Typography variant="h4" component="h2" sx={{fontWeight: 900, marginLeft: '3rem'}} gutterBottom>
         FAQ's
